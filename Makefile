@@ -55,6 +55,8 @@ default: test-parse
 
 all: generate lib$(LANGUAGE_NAME).a lib$(LANGUAGE_NAME).$(SOEXT) $(LANGUAGE_NAME).pc
 
+build: all
+
 generate:
 	tree-sitter generate
 
@@ -133,7 +135,7 @@ simple-test: generate
 highlight:
 	$(CMD_PREFIX) tree-sitter highlight $(FILE)
 
-test-parse: generate
+test-parse: generate build
 	$(CMD_PREFIX) tree-sitter parse $(FILE)
 
 foo:
@@ -146,4 +148,4 @@ simple: generate
 	$(CMD_PREFIX) tree-sitter parse examples/simple.rbl
 
 vim-install:
-	nvim "+TSInstallSync! rebel" +qa
+	nvim "+TSInstallSync! rock" +qa
