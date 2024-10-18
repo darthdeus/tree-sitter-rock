@@ -48,6 +48,7 @@ endif
 
 # default: test
 default: test-parse
+default: poopiary
 # default: install
 # default: highlight
 # default: both
@@ -151,3 +152,12 @@ simple: generate
 
 vim-install:
 	nvim "+TSInstallSync! rock" +qa
+
+poopiary:
+	export A=~/projects/topiary/topiary-config/languages.ncl && \
+	export REV=$(shell git rev-parse HEAD) && \
+	echo $$REV && \
+	export B=tmp.ncl && \
+	awk -v new_rev="$$REV" '/rock =/,/}/ { if (/rev/) sub(/".*"/, "\"" new_rev "\"") } { print }' < $A > $B && \
+	mv $B $A && \
+	TOPIARY_LANGUAGE_DIR=~/projects/topiary/topiary-queries/queries topiary fmt --configuration ~/projects/topiary/topiary-config/languages.ncl examples/function.rock
