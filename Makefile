@@ -161,4 +161,5 @@ poopiary:
 	awk -v new_rev="$$REV" '/rock =/,/}/ { if (/rev/) sub(/".*"/, "\"" new_rev "\"") } { print }' < $A > $B && \
 	mv $B $A && \
 	rm -f $B && \
+	cp queries/indent.scm ~/projects/topiary/topiary-queries/queries/rock.scm && \
 	TOPIARY_LANGUAGE_DIR=~/projects/topiary/topiary-queries/queries topiary fmt --configuration ~/projects/topiary/topiary-config/languages.ncl examples/function.rock
