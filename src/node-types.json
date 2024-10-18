@@ -2500,6 +2500,10 @@
     "named": true
   },
   {
+    "type": "string",
+    "named": false
+  },
+  {
     "type": "struct",
     "named": false
   },

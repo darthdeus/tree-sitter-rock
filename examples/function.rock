@@ -1,5 +1,5 @@
 // this is a function
-fn foo(x: num, y, z: string) -> num {
+fn foo(x: string, y, z: num) -> num {
   print(z, x + y);
 
   return 5;

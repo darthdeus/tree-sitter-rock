@@ -372,6 +372,7 @@ module.exports = grammar({
     primitive_type: ($) =>
       choice(
         "num",
+        "string",
         // "i8",
         // "i16",
         // "i32",

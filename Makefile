@@ -59,6 +59,8 @@ build: all
 
 generate:
 	tree-sitter generate
+	mkdir -p ~/.config/nvim/queries/rock
+	cp queries/* ~/.config/nvim/queries/rock/
 
 lib$(LANGUAGE_NAME).a: $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
