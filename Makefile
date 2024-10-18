@@ -160,4 +160,5 @@ poopiary:
 	export B=tmp.ncl && \
 	awk -v new_rev="$$REV" '/rock =/,/}/ { if (/rev/) sub(/".*"/, "\"" new_rev "\"") } { print }' < $A > $B && \
 	mv $B $A && \
+	rm -f $B && \
 	TOPIARY_LANGUAGE_DIR=~/projects/topiary/topiary-queries/queries topiary fmt --configuration ~/projects/topiary/topiary-config/languages.ncl examples/function.rock
