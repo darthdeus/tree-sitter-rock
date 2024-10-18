@@ -1,1 +1,8 @@
-hello
+// this is a function
+fn foo(x: num, y, z: string) -> num {
+  print(z, x + y);
+
+  return 5;
+}
+
+foo(5);
