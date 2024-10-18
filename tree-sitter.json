@@ -5,7 +5,8 @@
       "camelcase": "Rock",
       "scope": "source.rock",
       "path": ".",
-      "file-types": null,
+      "file-types": ["rock"],
+      "highlights": ["queries/highlights.scm"],
       "injection-regex": "^rock$"
     }
   ],
